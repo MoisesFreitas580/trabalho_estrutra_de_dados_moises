@@ -20,6 +20,7 @@ lista1.inserirNoFinal(3)
 lista1.printList()
 lista1.removerItemDaLista(7)
 lista1.printList()
+lista1.buscarItem(3)
 
 print("-"*10+"Pilha"+"-"*10)
 

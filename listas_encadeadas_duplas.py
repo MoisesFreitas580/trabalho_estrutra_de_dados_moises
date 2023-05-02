@@ -1,17 +1,17 @@
 class No:
-    def __init__(self, data):
-        self.data     = data 
-        self.proximo  = None 
-        self.anterior = None 
+    def __init__(self, data: any):
+        self.data: any = data 
+        self.proximo: any  = None 
+        self.anterior: any = None 
     
 class ListaEncadeadaDupla:
 
     def __init__(self):
-        self.cabeca = None
-        self.cauda = None
+        self.cabeca: any = None
+        self.cauda: any = None
     
 
-    def append(self, data):
+    def append(self, data: any):
         novo_no = No(data) 
 
         novo_no.proximo = None
@@ -42,7 +42,7 @@ class ListaEncadeadaDupla:
             conteudo = conteudo.proximo
         print(_str) 
 
-    def inserirNoInicio(self, data):
+    def inserirNoInicio(self, data: any):
         if self.cabeca == None:
             novo_no = No(data)
             self.cabeca = novo_no
@@ -53,7 +53,7 @@ class ListaEncadeadaDupla:
         self.cabeca.anterior = novo_no
         self.cabeca = novo_no
 
-    def inserirNoFinal(self, data):
+    def inserirNoFinal(self, data: any):
         if self.cabeca == None:
             novo_no = No(data)
             self.cabeca = novo_no
@@ -65,7 +65,7 @@ class ListaEncadeadaDupla:
         no_atual.proximo = novo_no
         novo_no.anterior = no_atual
     
-    def removerNoInicio(self):
+    def removerNoInicio(self: any):
         if self.cabeca == None:
             print(False)
             return 
@@ -87,7 +87,7 @@ class ListaEncadeadaDupla:
             no_atual = no_atual.proximo
         no_atual.anterior.proximo = None
 
-    def removerItemDaLista(self, value):
+    def removerItemDaLista(self, value: any):
         if self.cabeca == None:
             print(False)
             return 
@@ -117,15 +117,11 @@ class ListaEncadeadaDupla:
             else:
                 print(False)
 
-    def searchItem(self, value):
-        
-        if self.cabeca == None:
-            print(False)
-            return 
-        
+    def buscarItem(self, value: any):
         no_atual = self.cabeca
-        while self.cabeca != value:
+        while no_atual is not None:
             if no_atual.data == value:
-                print(True)
-            
+                print(no_atual.data)
+                return 
+            no_atual = no_atual.proximo
             
